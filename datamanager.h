@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QWidget>
 #include "threadpool.h"
+#include "network.h"
 
 class DataManager
 {
@@ -22,6 +23,7 @@ private:
 
     std::shared_ptr<QPixmap> pixmap_; // 这里仅保存一帧图像，暂不考虑为平滑性做多帧缓存
     mutable std::mutex mutex_pixmap_;
+    std::shared_ptr<X2DataReceiver> data_receiver_;
 };
 
 #endif // DATAMANAGER_H

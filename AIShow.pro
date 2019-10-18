@@ -19,12 +19,16 @@ SOURCES += \
     datamanager.cpp \
     main.cpp \
     mainwindow.cpp \
-    threadpool.cpp
+    network.cpp \
+    threadpool.cpp \
+    x2.pb.cc
 
 HEADERS += \
     datamanager.h \
     mainwindow.h \
-    threadpool.h \
+    network.h \
+    threadpool.h \ \
+    x2.pb.h
 
 FORMS += \
     mainwindow.ui
@@ -40,6 +44,10 @@ INCLUDEPATH += $$PWD/include/zmq
 DEPENDPATH += $$PWD/include/zmq
 
 win32: LIBS += -L$$PWD/lib/ -lopencv_world345
+win32: LIBS += -L$$PWD/lib/ -llibprotobuf
 
 INCLUDEPATH += $$PWD/include
 DEPENDPATH += $$PWD/include
+
+DISTFILES += \
+    x2.proto

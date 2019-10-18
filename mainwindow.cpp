@@ -29,22 +29,6 @@ void MainWindow::StartTimer()
 
 void MainWindow::OnUpdateTimer() // 界面线程只做绘制
 {
-    /*static int count = 0;
-    static time_t begin = time(nullptr);
-    time_t end = time(nullptr);
-    count++;
-    std::cout << count << " time:" << end - begin <<std::endl;
-    QImage image;
-    if(count % 5 == 0)
-        image.load("C:\\Users\\chuanyi.yang\\Documents\\MobaXterm\\home\\demo\\test_coco\\000000000139.jpg");
-    if(count % 5 == 1)
-        image.load("C:\\Users\\chuanyi.yang\\Documents\\MobaXterm\\home\\demo\\test_coco\\000000000285.jpg");
-    if(count % 5 == 2)
-        image.load("C:\\Users\\chuanyi.yang\\Documents\\MobaXterm\\home\\demo\\test_coco\\000000000632.jpg");
-    if(count % 5 == 3)
-        image.load("C:\\Users\\chuanyi.yang\\Documents\\MobaXterm\\home\\demo\\test_coco\\000000000724.jpg");
-    if(count % 5 == 4)
-        image.load("C:\\Users\\chuanyi.yang\\Documents\\MobaXterm\\home\\demo\\test_coco\\000000000785.jpg");*/
     auto pixmap = data_manager_->GetShowImg();
     if(pixmap)
         ui->label->setPixmap(*pixmap.get());
